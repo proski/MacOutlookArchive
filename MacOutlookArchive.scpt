@@ -7,7 +7,7 @@ tell application "System Events"
 	set currApp to first application process whose frontmost is true
 	set appName to name of currApp
 	if appName is not mailName then
-		display notification "Current program is not " & mailName with title myName subtitle "Error"
+		display notification with title myName subtitle ("Current program is not " & mailName)
 		return 0
 	end if
 end tell
@@ -15,12 +15,12 @@ tell application "Microsoft Outlook"
 	set frontWin to front window
 	set winName to name of frontWin
 	if "Reminders" is in winName then
-		display notification "Please close or minimize reminders" with title myName subtitle "Error"
+		display notification with title myName subtitle "Please close or minimize reminders"
 		return 0
 	end if
 	set currMsgs to current messages
 	if currMsgs = {} then
-		display notification "No current messages" with title myName subtitle "Error"
+		display notification with title myName subtitle "No current messages"
 		return 0
 	end if
 	set firstMsg to item 1 of currMsgs
@@ -52,5 +52,5 @@ tell application "Microsoft Outlook"
 		return 0
 	end try
 	set msgCount to (count items in currMsgs)
-	display notification "Archived messages: " & msgCount with title myName subtitle "Success"
+	display notification with title myName subtitle ("Archived messages: " & msgCount)
 end tell
