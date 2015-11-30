@@ -12,11 +12,12 @@ care. You don't want to archive email accidentally, without seeing what
 is being archived.
 
 Microsoft Outlook would often ignore the hotkey key. This script attempts
-to inform the user of all possible problems. If everything is fine,
-non-obtrusive notification is used. The user is always informed about the
-script execution status.
+to inform the user whenever it's run. If everything is fine, a
+non-obtrusive notification is used.
 
 ## Installation
+
+Create folder "Archive" under "Inbox" if you haven't already done it.
 
 Run Automator (just click on Launchpad and type "Automator"). Select
 "Service" in the initial dialog, "Utilities" in the leftmost column,
