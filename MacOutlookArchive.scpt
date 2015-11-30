@@ -22,7 +22,7 @@ tell application "Microsoft Outlook"
 	end if
 	set currMsgs to current messages
 	if currMsgs = {} then
-		display notification with title myName subtitle "No current messages"
+		display notification ("Current window: " & winName) with title myName subtitle "No current messages"
 		return 0
 	end if
 	set firstMsg to item 1 of currMsgs
