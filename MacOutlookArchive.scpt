@@ -1,4 +1,4 @@
-set myName to "MacOutlookArchive"
+set myName to "Mac Outlook Archive"
 set mailName to "Microsoft Outlook"
 set inboxName to "Inbox"
 set archiveName to "Archive"
