@@ -5,12 +5,14 @@ set archiveName to "Archive"
 
 tell application "System Events"
 	set currApp to first application process whose frontmost is true
-	set appName to name of currApp
-	if appName is not mailName then
-		display notification with title myName subtitle ("Current program is not " & mailName)
-		return 0
-	end if
 end tell
+
+set appName to name of currApp
+if appName is not mailName then
+	display notification with title myName subtitle ("Current program is not " & mailName)
+	return 0
+end if
+
 tell application "Microsoft Outlook"
 	set frontWin to front window
 	set winName to name of frontWin
