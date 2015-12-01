@@ -16,10 +16,6 @@ end if
 tell application "Microsoft Outlook"
 	set frontWin to front window
 	set winName to name of frontWin
-	if "Reminders" is in winName then
-		display notification with title myName subtitle "Please close or minimize reminders"
-		return 0
-	end if
 	set currMsgs to current messages
 	if currMsgs = {} then
 		display notification ("Current window: " & winName) with title myName subtitle "No current messages"
