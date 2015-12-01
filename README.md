@@ -19,27 +19,28 @@ non-obtrusive notification is used.
 
 Create folder "Archive" under "Inbox" if you haven't already done it.
 
-Run Automator (just click on Launchpad and type "Automator"). Select
-"Service" in the initial dialog, "Utilities" in the leftmost column,
-double click "Run AppleScript" in the second column from the left.
+Run Automator (just click on the Launchpad icon and type "Automator").
+Select "Service" in the initial dialog. Choose "Utilities" in the
+leftmost column. Double click "Run AppleScript" in the second column from
+the left.
 
-Copy the contents of MacOutlookArchive.scpt to replace the suggested
-boilerplate code. Above the script, for "Service receives" select "no
-input". Save as "MacOutlookArchive", quit Automator.
+Copy and paste the contents of MacOutlookArchive.scpt to replace the
+suggested script. Above the script, select: Service receives *no input*
+in *Microsoft Outlook*. Below the script, check "Ignore this action's
+input".
 
-Now let's associate the service with a key. Open System Preferences ->
-Keyboard -> Shortcuts. Select "Services" in the left column, find
-MacOutlookArchive, set shortcut to the desired value. Unfortunately, the
-key will be recognized in all applications, so use a key that you are
-only going to use in Microsoft Outlook.
+Select File -> Save in the menu, save service as "Mac Outlook Archive" or
+any name of your choice. Quit Automator.
 
-MacOutlookArchive should appear in the main menu of all applications
-(application name -> Services), but it would only archive mail if Outlook
-is active. In other applications, it should not do anything other than
-displaying a notification.
+Now let's associate the service with a hotkey. Open System Preferences ->
+Keyboard -> Shortcuts. Select "Services" in the left column, find the
+service under "General", set shortcut to the desired value.
 
-## TODO
+That should be sufficient to make the script work. If it doesn't, check
+the Outlook -> Services menu in Microsoft Outlook and run the script from
+there.
 
-The script should pass an unconsumed key to the foreground application,
-but I cannot implement that functionality without causing a loop under
-some circumstances.
+## Deinstallation
+
+Open Finder. Press Shift-Opt-G and enter ~/Library/Services to open the
+Services directory. Drag the service to trash.
