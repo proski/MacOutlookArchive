@@ -11,9 +11,9 @@ menu. The scripting has to be done in Automator, which requires extra
 care. You don't want to archive email accidentally, without seeing what
 is being archived.
 
-Microsoft Outlook would often ignore the hotkey key. This script attempts
-to inform the user whenever it's run. If everything is fine, a
-non-obtrusive notification is used.
+With the primitive scripts, Microsoft Outlook would often ignore the
+hotkey. This script aims to inform the user whenever it's run. If
+everything is fine, a non-obtrusive notification is used.
 
 ## Installation
 
@@ -37,8 +37,8 @@ Keyboard -> Shortcuts. Select "Services" in the left column, find the
 service under "General", set shortcut to the desired value.
 
 That should be sufficient to make the script work. If it doesn't, check
-the Outlook -> Services menu in Microsoft Outlook and run the script from
-there.
+the Outlook -> Services menu in Microsoft Outlook and run the service
+from there. Once run from the menu, it starts running with the hotkey.
 
 ## Deinstallation
 
