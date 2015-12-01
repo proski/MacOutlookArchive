@@ -50,5 +50,11 @@ tell application "Microsoft Outlook"
 		return 0
 	end try
 	set msgCount to (count items in currMsgs)
-	display notification with title myName subtitle ("Archived messages: " & msgCount)
+	if msgCount = 1 then
+		set msg to item 1 of currMsgs
+		set subj to subject of msg
+		display notification with title myName subtitle ("Archived: " & subj)
+	else
+		display notification with title myName subtitle ("Archived " & msgCount & " messages")
+	end if
 end tell
