@@ -36,9 +36,17 @@ Now let's associate the service with a hotkey. Open System Preferences ->
 Keyboard -> Shortcuts. Select "Services" in the left column, find the
 service under "General", set shortcut to the desired value.
 
-That should be sufficient to make the script work. If it doesn't, check
-the Outlook -> Services menu in Microsoft Outlook and run the service
-from there. Once run from the menu, it starts running with the hotkey.
+That should be sufficient to make the script work.
+
+## Troubleshooting
+
+When Outlook starts, it may ignore the hotkey. To work around that bug,
+check the Outlook -> Services menu in Microsoft Outlook, but don't run
+anything from it. Just make sure the "Mac Outlook Archive" service is
+there and associated with the correct hotkey.
+
+Once you see the key in the menu, just close the menu by selecting the
+main Outlook window with the mouse. The hotkey should start working.
 
 ## Deinstallation
 
