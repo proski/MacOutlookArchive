@@ -35,7 +35,7 @@ tell application "Microsoft Outlook"
 			set (is read) of theMessage to true
 			move theMessage to destFolder
 		end repeat
-	on error
+	on error errorMessage number errorNumber
 		display alert myName message ("Archiving failed. " & errorMessage & ", errorNumber: " & errorNumber) as critical
 		return 0
 	end try
