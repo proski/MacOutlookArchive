@@ -8,7 +8,7 @@ tell application "Microsoft Outlook"
 	set winName to name of frontWin
 	set currMsgs to current messages
 	if currMsgs = {} then
-		display notification ("Current window: " & winName) with title myName subtitle "No current messages"
+		display notification ("No selected messages in window: " & winName) with title "No messages selected"
 		return 0
 	end if
 	set firstMsg to item 1 of currMsgs
@@ -21,13 +21,13 @@ tell application "Microsoft Outlook"
 		end if
 	end repeat
 	if theInbox is null then
-		display alert myName message ("Mailbox \"" & inboxName & "\" not found") as critical
+		display alert myName message ("Inbox folder \"" & inboxName & "\" not found") as critical
 		return 0
 	end if
 	try
 		set destFolder to folder archiveName of theInbox
 	on error errorMessage number errorNumber
-		display alert ("Archive folder \"" & archiveName & "\" not found. ") message (errorMessage & ", errorNumber: " & errorNumber) as critical
+		display alert ("Archive folder not found: " & archiveName) message (errorMessage & "\nError number: " & errorNumber) as critical
 		return 0
 	end try
 	try
@@ -35,8 +35,8 @@ tell application "Microsoft Outlook"
 			set (is read) of theMessage to true
 			move theMessage to destFolder
 		end repeat
-	on error
-		display alert myName message ("Archiving failed. " & errorMessage & ", errorNumber: " & errorNumber) as critical
+	on error errorMessage number errorNumber
+		display alert "Archiving failed" message (errorMessage & "\nError number: " & errorNumber) as critical
 		return 0
 	end try
 	set msgCount to (count items in currMsgs)
